@@ -3,16 +3,25 @@
   margin-left: 135px;
 }
 
+@mixin location($w, $h, $l, $t, $fontSize, $lineHeight, $pos: absolute) {
+  position: $pos;
+  width: $w;
+  height: $h;
+  left: $l;
+  top: $t;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
 .title{
   /* Анкета */
-  position: absolute;
+  //@include location(314px, 51px, 51px, 87px, 41px, 54px);
+  //position: absolute;
   width: 314px;
   height: 51px;
-  left: 135px;
-  top: 87px;
-  font-family: 'PT Sans';
-  font-style: normal;
+  //left: 135px;
+  //top: 87px;
   font-size: 41px;
   line-height: 53px;
-  color: #000000;
+  //color: #000000;
 }
