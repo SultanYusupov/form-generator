@@ -4,13 +4,7 @@ label {
   font-size: 17px;
   line-height: 22px;
 }
-.required:after {
-  content: "*";
-  color: red;
-}
-
-.input-name {
-  /* Rectangle */
+input {
   box-sizing: border-box;
   width: 500px;
   height: 44px;
