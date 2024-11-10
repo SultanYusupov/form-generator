@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-test-select',
+  selector: 'test-select',
   standalone: true,
   imports: [],
   templateUrl: './test-select.component.html',

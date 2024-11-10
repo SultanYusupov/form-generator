@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-test-checkbox',
+  selector: 'test-checkbox',
   standalone: true,
   imports: [],
   templateUrl: './test-checkbox.component.html',
