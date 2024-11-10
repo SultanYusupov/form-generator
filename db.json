@@ -1,0 +1,11 @@
+{
+  "forms": [
+    {"type": "text", "formList": [
+      { "id": "1", "labelName": "Имя", "inputName": "name", "required": true },
+      { "id": "2", "labelName": "ВУЗ", "inputName": "university", "required": false }
+    ]},
+    {"type": "number", "formList": []},
+    {"type": "select", "formList": []},
+    {"type": "checkbox", "formList": []}
+  ]
+}
