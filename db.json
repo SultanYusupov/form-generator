@@ -5,9 +5,26 @@
       { "id": "2", "labelName": "ВУЗ", "inputName": "university", "required": false }
     ]},
     {"type": "number", "formList": [
-      { "id": "1", "labelName": "Возраст", "inputName": "age", "required": true }
+      { "id": "1", "labelName": "Возраст", "inputName": "age", "required": true, "min": 1, "max": 100 }
     ]},
-    {"type": "select", "formList": []},
+    {"type": "select", "formList": [
+      { "id": "1", "labelName": "Семейное положение", "inputName": "maritalStatus", "required": true,
+        "options": [
+          "Не женат/не замужем",
+          "Женат/замужем"
+        ]
+      },
+      { "id": "2", "labelName": "Место рождения", "inputName": "placeOfBirth", "required": false, "options": [
+        "Не важно",
+        "Астрахань",
+        "Волгоград",
+        "Волжский",
+        "Ростов-на-Дону",
+        "Саратов",
+        "Элиста"
+       ]
+      }
+    ]},
     {"type": "checkbox", "formList": []}
   ]
 }

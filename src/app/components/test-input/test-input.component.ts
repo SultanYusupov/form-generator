@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {IInput} from '../../interfaces/IInput';
 
 @Component({
   selector: 'test-input',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './test-input.component.scss'
 })
 export class TestInputComponent {
-
+  @Input() inputData!: IInput;
 }

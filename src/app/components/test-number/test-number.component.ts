@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {IInput} from '../../interfaces/IInput';
 
 @Component({
   selector: 'test-number',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './test-number.component.css'
 })
 export class TestNumberComponent {
-
+  @Input() inputData!: IInput;
 }

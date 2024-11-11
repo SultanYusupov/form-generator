@@ -6,17 +6,17 @@
       @switch (form.type) {
         @case ('text') {
           @for (textInputItem of form.formList; track textInputItem.id) {
-            <test-input></test-input>
+            <test-input [inputData]="textInputItem"></test-input>
           }
         }
         @case ('number') {
           @for (numberInputItem of form.formList; track numberInputItem.id) {
-            <test-number></test-number>
+            <test-number [inputData]="numberInputItem"></test-number>
           }
         }
         @case ('select') {
           @for (selectInputItem of form.formList; track selectInputItem.id) {
-            <test-select></test-select>
+            <test-select [inputData]="selectInputItem"></test-select>
           }
         }
         @case ('checkbox') {

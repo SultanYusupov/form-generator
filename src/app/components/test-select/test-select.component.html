@@ -1,4 +1,6 @@
-<label>Семейное положение</label>
-<select>
-  <option>Не женат/не замужем</option>
+<label>{{inputData.labelName}}</label>
+<select [required]="inputData.required">
+  @for (option of inputData.options; track $index) {
+    <option>{{option}}</option>
+  }
 </select>

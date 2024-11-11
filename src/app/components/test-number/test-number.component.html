@@ -1,2 +1,2 @@
-<label>Возраст</label>
-<input type="number" name="age" required>
+<label>{{inputData.labelName}}</label>
+<input type="number" [name]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
