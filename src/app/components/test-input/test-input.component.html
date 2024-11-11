@@ -1,2 +1,4 @@
-<label>{{inputData.labelName}}</label>
-<input type="text" [name]="inputData.inputName" [required]="inputData.required">
+<div [formGroup]="fControl">
+  <label>{{inputData.labelName}}</label>
+  <input type="text" [name]="inputData.inputName" [required]="inputData.required" [formControlName]="inputData.inputName">
+</div>

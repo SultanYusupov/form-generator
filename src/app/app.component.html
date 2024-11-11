@@ -29,7 +29,7 @@
     @for (form of forms; track form.id) {
       @switch (form.type) {
         @case ('text') {
-          <test-input [inputData]="form"></test-input>
+          <test-input [inputData]="form" [fControl]="testForm"></test-input>
         }
         @case ('number') {
           <test-number [inputData]="form"></test-number>

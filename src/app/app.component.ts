@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {TestInputComponent} from './components/test-input/test-input.component';
 import {BackendService} from './services/backend.service';
 import {IForm} from './interfaces/IForm';
@@ -21,14 +21,22 @@ export class AppComponent implements OnInit{
   forms: IForm[] = [];
   iterator: any;
   bs = inject(BackendService);
+  fb = inject(FormBuilder);
+  testForm!: FormGroup; // массив forms может быть пустым, поэтому знак вопроса
   ngOnInit() {
     this.getForms();
+    this.testForm = this.fb.group({});
   }
 
   getForms() {
     this.bs.getFormList().subscribe(data => {
       this.forms = data;
       // this.iterator = this.forms[0]['formList'][Symbol.iterator]();
+      this.forms.forEach(el => {
+        const control = this.fb.control('', el.required ? Validators.required : null);
+        this.testForm.addControl(el.inputName, control);
+      })
+
     });
   }
 }
