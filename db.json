@@ -1,42 +1,33 @@
 {
   "forms": [
-    {"type": "text", "formList": [
-      { "id": "1", "labelName": "Имя", "inputName": "name", "required": true },
-      { "id": "2", "labelName": "ВУЗ", "inputName": "university", "required": false }
-    ]},
-    {"type": "number", "formList": [
-      { "id": "1", "labelName": "Возраст", "inputName": "age", "required": true, "min": 1, "max": 100 }
-    ]},
-    {"type": "select", "formList": [
-      { "id": "1", "labelName": "Семейное положение", "inputName": "maritalStatus", "required": true,
-        "options": [
-          "Не женат/не замужем",
-          "Женат/замужем"
-        ]
-      },
-      { "id": "2", "labelName": "Место рождения", "inputName": "placeOfBirth", "required": false, "options": [
-        "Не важно",
-        "Астрахань",
-        "Волгоград",
-        "Волжский",
-        "Ростов-на-Дону",
-        "Саратов",
-        "Элиста"
-       ]
-      }
-    ]},
-    {"type": "checkbox", "formList": [
-      { "id": "1", "labelName": "Навыки", "inputName": "skills", "required": false, "options": [
-        "Общение",
-        "Иностранные языки",
-        "Бег с препятствиями",
-        "Быстрое чтение",
-        "Самозащита",
-        "Вождение",
-        "Программирование",
-        "Управление вертолетом",
-        "Оперное пение"
-      ] }
-    ]}
+    { "id": "1", "labelName": "Имя", "inputName": "name", "type": "text", "required": true },
+    { "id": "2", "labelName": "Возраст", "inputName": "age", "type": "number", "required": true },
+    { "id": "3", "labelName": "Семейное положение", "inputName": "maritalStatus", "required": true, "type": "select",
+      "options": [
+        "Не женат/не замужем",
+        "Женат/замужем"
+      ]
+    },
+    { "id": "4", "labelName": "ВУЗ", "inputName": "university", "type": "text", "required": false },
+    { "id": "5", "labelName": "Место рождения", "inputName": "placeOfBirth", "type": "select", "required": false, "options": [
+      "Не важно",
+      "Астрахань",
+      "Волгоград",
+      "Волжский",
+      "Ростов-на-Дону",
+      "Саратов",
+      "Элиста"
+    ] },
+    { "id": "6", "labelName": "Навыки", "inputName": "skills", "type": "checkbox", "required": false, "options": [
+      "Общение",
+      "Иностранные языки",
+      "Бег с препятствиями",
+      "Быстрое чтение",
+      "Самозащита",
+      "Вождение",
+      "Программирование",
+      "Управление вертолетом",
+      "Оперное пение"
+    ] }
   ]
 }

@@ -1,8 +1,8 @@
 <div class="form-block">
   <p class="title">Анкета</p>
-  <form ngForm="testForm">
+  <form [formGroup]="testForm">
 <!--  @for  Type IForm[] must have a [Symbol. iterator]() method that returns an iterator.-->
-    @for (form of forms; track form.type) {
+    <!--@for (form of forms; track form.type) {
       @switch (form.type) {
         @case ('text') {
           @for (textInputItem of form.formList; track textInputItem.id) {
@@ -23,6 +23,22 @@
           @for (checkboxInputItem of form.formList; track checkboxInputItem.id) {
             <test-checkbox [inputData]="checkboxInputItem"></test-checkbox>
           }
+        }
+      }
+    }-->
+    @for (form of forms; track form.id) {
+      @switch (form.type) {
+        @case ('text') {
+          <test-input [inputData]="form"></test-input>
+        }
+        @case ('number') {
+          <test-number [inputData]="form"></test-number>
+        }
+        @case ('select') {
+          <test-select [inputData]="form"></test-select>
+        }
+        @case ('checkbox') {
+          <test-checkbox [inputData]="form"></test-checkbox>
         }
       }
     }
