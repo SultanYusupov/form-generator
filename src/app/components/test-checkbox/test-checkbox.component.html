@@ -1,7 +1,7 @@
-<fieldset>
-  <legend>Навыки</legend>
-  <div>
-    <input type="checkbox" id="skills" name="communication" />
-    <label for="skills">Scales</label>
-  </div>
-</fieldset>
+<legend>{{inputData.labelName}}</legend>
+@for (option of inputData.options; track $index) {
+  <input type="checkbox" [id]="inputData.inputName+$index" [name]="inputData.inputName" />
+  <label [for]="inputData.inputName+$index">{{option}}</label>
+}
+
+

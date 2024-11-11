@@ -21,7 +21,7 @@
         }
         @case ('checkbox') {
           @for (checkboxInputItem of form.formList; track checkboxInputItem.id) {
-            <test-checkbox></test-checkbox>
+            <test-checkbox [inputData]="checkboxInputItem"></test-checkbox>
           }
         }
       }
