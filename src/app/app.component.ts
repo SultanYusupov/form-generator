@@ -1,18 +1,27 @@
 import {Component, inject, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {
+  AbstractControl,
+  FormArray,
+  FormBuilder,
+  FormControl, FormControlName,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
 import {TestInputComponent} from './components/test-input/test-input.component';
 import {BackendService} from './services/backend.service';
 import {IForm} from './interfaces/IForm';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {TestNumberComponent} from './components/test-number/test-number.component';
 import {TestSelectComponent} from './components/test-select/test-select.component';
 import {TestCheckboxComponent} from './components/test-checkbox/test-checkbox.component';
+import {AddButtonComponent} from './components/add-button/add-button.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, TestInputComponent, NgForOf, TestNumberComponent, TestSelectComponent, TestCheckboxComponent],
+  imports: [RouterOutlet, ReactiveFormsModule, TestInputComponent, NgForOf, TestNumberComponent, TestSelectComponent, TestCheckboxComponent, AddButtonComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -48,5 +57,15 @@ export class AppComponent implements OnInit{
         this.testForm.addControl(el.inputName, control);
       }
     })
+  }
+
+  addFormControl(inputName: string) {
+    (this.testForm.get(inputName) as FormArray).push(this.fb.control(''));
+    console.log(this.testForm);
+  }
+
+  deleteFormControl(inputName: string, index: number) {
+    const control = this.testForm.get(inputName) as FormArray;
+    control.removeAt(index);
   }
 }

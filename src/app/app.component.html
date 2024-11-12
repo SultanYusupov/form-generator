@@ -29,7 +29,10 @@
     @for (form of forms; track form.id) {
       @switch (form.type) {
         @case ('text') {
-          <test-input [inputData]="form" [fControl]="testForm"></test-input>
+          <div class="form-container">
+            <test-input [inputData]="form" [fControl]="testForm"></test-input>
+            <add-button *ngIf="form.multiply" (click)="addFormControl(form.inputName)"></add-button>
+          </div>
         }
         @case ('number') {
           <test-number [inputData]="form" [fControl]="testForm"></test-number>
