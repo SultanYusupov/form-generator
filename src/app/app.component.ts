@@ -61,7 +61,6 @@ export class AppComponent implements OnInit{
 
   addFormControl(inputName: string) {
     (this.testForm.get(inputName) as FormArray).push(this.fb.control(''));
-    console.log(this.testForm);
   }
 
   deleteFormControl(inputName: string, index: number) {
