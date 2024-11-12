@@ -30,25 +30,23 @@ export class AppComponent implements OnInit{
   getForms() {
     this.bs.getFormList().subscribe(data => {
       this.forms = data;
-      // let control: FormControl<string | null> | FormArray<FormControl<string | null>>;
-      this.forms.forEach(el => {
-        if (el.multiply) {
-          // control = this.fb.array(el.options as string[], el.required ? Validators.required : null);
-          const formArray: FormArray<FormControl<any>> = this.fb.array([]);
-          this.testForm.addControl(el.inputName, formArray);
-          const control: FormArray = this.testForm.get(el.inputName) as FormArray;
-          control.push(this.fb.control(''));
-        }
-        else {
-          const control: FormControl<string | null> = this.fb.control('', el.required ? Validators.required : null);
-          this.testForm.addControl(el.inputName, control);
-        }
-      })
-
+      this.createForm();
     });
   }
 
-  createForm(form: FormGroup, forms: IForm[]) {
-
+  createForm() {
+    this.forms.forEach(el => {
+      if (el.multiply) {
+        // control = this.fb.array(el.options as string[], el.required ? Validators.required : null);
+        const formArray: FormArray<FormControl<any>> = this.fb.array([]);
+        this.testForm.addControl(el.inputName, formArray);
+        const control: FormArray = this.testForm.get(el.inputName) as FormArray;
+        control.push(this.fb.control(''));
+      }
+      else {
+        const control: FormControl<string | null> = this.fb.control('', el.required ? Validators.required : null);
+        this.testForm.addControl(el.inputName, control);
+      }
+    })
   }
 }
