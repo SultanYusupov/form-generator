@@ -3,10 +3,16 @@
   @if (inputData.multiply) {
     <ng-container formArrayName="{{inputData.inputName}}">
       @for (control of getControls(); let i = $index; track i) {
-        <input type="number" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required"  [min]="inputData.min" [max]="inputData.max">
+        <div class="input-number">
+          <input type="number" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required"  [min]="inputData.min" [max]="inputData.max">
+          <number-button></number-button>
+        </div>
       }
     </ng-container>
   } @else {
-      <input type="number" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
+    <div class="input-number">
+          <input type="number" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
+          <number-button></number-button>
+    </div>
   }
 </ng-container>

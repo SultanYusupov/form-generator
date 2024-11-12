@@ -13,19 +13,4 @@ input[type='number'] {
 
 .input-number {
   display: inline-flex;
-
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
-
-    button {
-      width: 30px;
-      height: 22px;
-      background: #DFDFDF;
-      border: none;
-    }
-  }
-
 }
-

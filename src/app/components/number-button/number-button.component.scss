@@ -1,0 +1,39 @@
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+button {
+  width: 30px;
+  height: 21px;
+  background: #DFDFDF;
+  border: none;
+  cursor: pointer;
+}
+
+.increment-btn {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.decrement-btn {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.arrow-top {
+  position: relative;
+  width: 9.29px;
+  height: 9.29px;
+  left: 382.07px;
+  top: 259.14px;
+  background: #9D9D9D;
+  transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
+}
+
+.line {
+  width: 30px;
+  box-sizing: border-box;
+  height: 0;
+  border: 1px solid #9D9D9D;
+}
