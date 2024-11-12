@@ -1,0 +1,33 @@
+.ellipse {
+  box-sizing: border-box;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+.vector {
+  position: absolute;
+  width: 14px;
+  height: 0;
+  border: 1px solid #000000;
+}
+
+.vertical {
+  left: 5px;
+  top: 11px;
+  transform: rotate(90deg);
+}
+
+.horizontal {
+  left: 5px;
+  top: 11px;
+}
+
+.text {
+  margin-left: 37px;
+  font-size: 17px;
+  line-height: 22px;
+}
