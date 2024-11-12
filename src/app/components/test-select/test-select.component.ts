@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IInput} from '../../interfaces/IInput';
+import {IForm} from '../../interfaces/IForm';
 
 @Component({
   selector: 'test-select',
@@ -9,5 +10,5 @@ import {IInput} from '../../interfaces/IInput';
   styleUrl: './test-select.component.css'
 })
 export class TestSelectComponent {
-  @Input() inputData!: IInput;
+  @Input() inputData!: IForm;
 }

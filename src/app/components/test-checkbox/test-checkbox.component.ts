@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IInput} from '../../interfaces/IInput';
+import {IForm} from '../../interfaces/IForm';
 
 @Component({
   selector: 'test-checkbox',
@@ -9,5 +10,5 @@ import {IInput} from '../../interfaces/IInput';
   styleUrl: './test-checkbox.component.css'
 })
 export class TestCheckboxComponent {
-  @Input() inputData!: IInput;
+  @Input() inputData!: IForm;
 }

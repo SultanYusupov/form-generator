@@ -8,7 +8,8 @@ export interface IForm {
   labelName: string,
   inputName: string,
   required: boolean,
+  multiply?: boolean,
   options?: string[],
-  min?: number,
-  max?: number
+  min: number | null,
+  max: number | null
 }

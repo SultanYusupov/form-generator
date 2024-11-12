@@ -1,14 +1,17 @@
 {
   "forms": [
     { "id": "1", "labelName": "Имя", "inputName": "name", "type": "text", "required": true },
-    { "id": "2", "labelName": "Возраст", "inputName": "age", "type": "number", "required": true },
+    { "id": "2", "labelName": "Возраст", "inputName": "age", "type": "number", "required": true, "min": 16, "max": 80},
     { "id": "3", "labelName": "Семейное положение", "inputName": "maritalStatus", "required": true, "type": "select",
       "options": [
         "Не женат/не замужем",
         "Женат/замужем"
       ]
     },
-    { "id": "4", "labelName": "ВУЗ", "inputName": "university", "type": "text", "required": false },
+    { "id": "4", "labelName": "ВУЗ", "inputName": "university", "type": "text", "required": false, "multiply": true,
+      "options": [
+      "ВолГУ", "ВИУ", "ВГСПУ"
+    ] },
     { "id": "5", "labelName": "Место рождения", "inputName": "placeOfBirth", "type": "select", "required": false, "options": [
       "Не важно",
       "Астрахань",
