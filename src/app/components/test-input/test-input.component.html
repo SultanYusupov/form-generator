@@ -1,4 +1,4 @@
-<div [formGroup]="fControl">
+<ng-container [formGroup]="fControl">
   <label>{{inputData.labelName}}</label>
     @if (inputData.multiply) {
       <ng-container formArrayName="{{inputData.inputName}}">
@@ -9,5 +9,4 @@
     } @else {
           <input type="text" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required">
     }
-
-</div>
+</ng-container>
