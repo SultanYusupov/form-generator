@@ -4,3 +4,21 @@ body {
   font-family: 'PT Sans', serif;
   font-style: normal;
 }
+
+input, select {
+  margin-left: 17px;
+  padding: 13px 15px 7px 15px;
+  font-size: 17px;
+  box-sizing: border-box;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+}
+
+label {
+  width: 140px;
+  font-size: 17px;
+  display: inline-block;
+  line-height: 22px;
+}

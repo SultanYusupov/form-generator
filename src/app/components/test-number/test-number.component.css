@@ -1,0 +1,31 @@
+input {
+  width: 70px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+.input-number {
+  display: inline-flex;
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+
+    button {
+      width: 30px;
+      height: 22px;
+      background: #DFDFDF;
+      border: none;
+    }
+  }
+
+}
+
