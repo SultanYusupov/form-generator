@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IInput} from '../../interfaces/IInput';
-import {FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormArray, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {IForm} from '../../interfaces/IForm';
 
 @Component({
@@ -15,4 +15,8 @@ import {IForm} from '../../interfaces/IForm';
 export class TestNumberComponent {
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
+
+  getControls() {
+    return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
+  }
 }
