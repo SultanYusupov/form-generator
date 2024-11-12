@@ -1,31 +1,6 @@
 <div class="form-block">
   <p class="title">Анкета</p>
   <form [formGroup]="testForm">
-<!--  @for  Type IForm[] must have a [Symbol. iterator]() method that returns an iterator.-->
-    <!--@for (form of forms; track form.type) {
-      @switch (form.type) {
-        @case ('text') {
-          @for (textInputItem of form.formList; track textInputItem.id) {
-            <test-input [inputData]="textInputItem"></test-input>
-          }
-        }
-        @case ('number') {
-          @for (numberInputItem of form.formList; track numberInputItem.id) {
-            <test-number [inputData]="numberInputItem"></test-number>
-          }
-        }
-        @case ('select') {
-          @for (selectInputItem of form.formList; track selectInputItem.id) {
-            <test-select [inputData]="selectInputItem"></test-select>
-          }
-        }
-        @case ('checkbox') {
-          @for (checkboxInputItem of form.formList; track checkboxInputItem.id) {
-            <test-checkbox [inputData]="checkboxInputItem"></test-checkbox>
-          }
-        }
-      }
-    }-->
     @for (form of forms; track form.id) {
       @switch (form.type) {
         @case ('text') {
