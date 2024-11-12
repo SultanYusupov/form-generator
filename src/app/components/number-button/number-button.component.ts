@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'number-button',
@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './number-button.component.scss'
 })
 export class NumberButtonComponent {
+  @Output() increment = new EventEmitter();
+  @Output() decrement = new EventEmitter();
 
+  incrementNumber() {
+    this.increment.emit();
+  }
+  decrementNumber() {
+    this.decrement.emit();
+  }
 }

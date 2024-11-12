@@ -21,4 +21,28 @@ export class TestNumberComponent {
   getControls() {
     return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
   }
+
+  incrementNumber(i?: number) {
+    let currentValue:number;
+    if (typeof i === "number") {
+      currentValue = this.getControls().at(i)!.value ?? 0;
+      this.getControls().at(i)!.setValue(++currentValue);
+    }
+    else {
+      currentValue = this.fControl.get(this.inputData.inputName)?.value ?? 0;
+      this.fControl.get(this.inputData.inputName)?.setValue(++currentValue);
+    }
+
+  }
+  decrementNumber(i?:number) {
+    let currentValue:number;
+    if (typeof i === "number") {
+      currentValue =  this.getControls().at(i)!.value ?? 0;
+      this.getControls().at(i)!.setValue(--currentValue);
+    }
+    else {
+      currentValue = this.fControl.get(this.inputData.inputName)?.value ?? 0;
+      this.fControl.get(this.inputData.inputName)?.setValue(--currentValue);
+    }
+  }
 }

@@ -5,14 +5,14 @@
       @for (control of getControls(); let i = $index; track i) {
         <div class="input-number">
           <input type="number" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required"  [min]="inputData.min" [max]="inputData.max">
-          <number-button></number-button>
+          <number-button (increment)="incrementNumber(i)" (decrement)="decrementNumber(i)"></number-button>
         </div>
       }
     </ng-container>
   } @else {
     <div class="input-number">
           <input type="number" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
-          <number-button></number-button>
+          <number-button (increment)="incrementNumber()" (decrement)="decrementNumber()"></number-button>
     </div>
   }
 </ng-container>
