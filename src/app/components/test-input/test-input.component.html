@@ -1,10 +1,13 @@
 <div [formGroup]="fControl">
   <label>{{inputData.labelName}}</label>
-  <ng-container formArrayName="{{inputData.inputName}}">
     @if (inputData.multiply) {
-      @for (control of getControls(); let i = $index; track i) {
-          <input type="text" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
-        }
+      <ng-container formArrayName="{{inputData.inputName}}">
+          @for (control of getControls(); let i = $index; track i) {
+              <input type="text" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
+            }
+      </ng-container>
+    } @else {
+          <input type="text" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required">
     }
-  </ng-container>
+
 </div>
