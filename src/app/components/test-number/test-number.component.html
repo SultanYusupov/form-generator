@@ -1,2 +1,4 @@
+<ng-container [formGroup]="fControl">
 <label>{{inputData.labelName}}</label>
-<input type="number" [name]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
+<input type="number" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
+</ng-container>

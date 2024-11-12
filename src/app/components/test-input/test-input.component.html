@@ -1,4 +1,11 @@
 <div [formGroup]="fControl">
   <label>{{inputData.labelName}}</label>
-  <input type="text" [name]="inputData.inputName" [required]="inputData.required" [formControlName]="inputData.inputName">
+  <div formArrayName="{{inputData.inputName}}">
+    @if (inputData.multiply) {
+      <div *ngFor="let control of getControls(); let i = index">
+        <input [formControlName]="i" />
+      </div>
+    }
+    <input type="text" [name]="inputData.inputName" [required]="inputData.required">
+  </div>
 </div>
