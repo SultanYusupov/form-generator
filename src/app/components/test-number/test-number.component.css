@@ -11,15 +11,21 @@ input[type='number'] {
   -moz-appearance:textfield;
 }
 
-.input-number {
-  display: inline-flex;
-}
-
-.form-container {
+.container-with-buttons {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .field-container {
   display: flex;
+}
+
+.container-with-add-btn {
+  display: flex;
+  align-items: end;
+}
+
+.container-with-del-btn {
+  display: flex;
+  align-items: center;
 }

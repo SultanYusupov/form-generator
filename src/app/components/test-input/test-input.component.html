@@ -1,16 +1,19 @@
-<div class="form-item" [formGroup]="fControl">
+<div class="form-container" [formGroup]="fControl">
   <label>{{inputData.labelName}}</label>
     @if (inputData.multiply) {
-      <ng-container formArrayName="{{inputData.inputName}}">
-        <div class="field-container">
-          @for (control of getControls(); let i = $index; track i) {
-              <input type="text" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
-            }
-        </div>
-      </ng-container>
+        <ng-container formArrayName="{{inputData.inputName}}">
+          <div class="fields">
+            @for (control of getControls(); let i = $index; track i) {
+                <div class="container-with-buttons">
+                  <input type="text" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
+                  <remove-button *ngIf="inputData.multiply && i !== 0"></remove-button>
+                  <add-button *ngIf="inputData.multiply && i == getControls().length - 1" (click)="addControlItem()"></add-button>
+                </div>
+              }
+          </div>
+
+        </ng-container>
     } @else {
-      <div class="field-container">
           <input type="text" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required">
-      </div>
     }
 </div>

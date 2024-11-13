@@ -17,11 +17,12 @@ import {TestNumberComponent} from './components/test-number/test-number.componen
 import {TestSelectComponent} from './components/test-select/test-select.component';
 import {TestCheckboxComponent} from './components/test-checkbox/test-checkbox.component';
 import {AddButtonComponent} from './components/add-button/add-button.component';
+import {RemoveButtonComponent} from './components/remove-button/remove-button.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, TestInputComponent, NgForOf, TestNumberComponent, TestSelectComponent, TestCheckboxComponent, AddButtonComponent, NgIf],
+  imports: [RouterOutlet, ReactiveFormsModule, TestInputComponent, NgForOf, TestNumberComponent, TestSelectComponent, TestCheckboxComponent, AddButtonComponent, NgIf, RemoveButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
