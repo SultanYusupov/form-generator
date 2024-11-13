@@ -1,7 +1,8 @@
 .ellipse {
   box-sizing: border-box;
   position: relative;
-  top: 22px;
+  //top: 22px;
+  bottom: 2px;
   width: 26px;
   height: 26px;
   background: #FFFFFF;
@@ -12,6 +13,8 @@
 .button {
   margin-left: 15px;
   margin-bottom: 22px;
+  display: flex;
+  cursor: pointer;
 }
 
 .vector {
@@ -33,7 +36,7 @@
 }
 
 .text {
-  margin-left: 37px;
+  margin-left: 7px;
   font-size: 17px;
-  line-height: 22px;
+  //line-height: 22px;
 }
