@@ -1,0 +1,38 @@
+.checkboxes {
+  column-count: 2;
+}
+
+.checkbox-item {
+  margin-bottom: 13px;
+}
+
+input {
+  display: none;
+}
+input + label {
+  position: relative;
+  padding-left: 38px;
+  cursor: pointer;
+}
+input + label:before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+}
+input:checked + label::before {
+  content: "";
+  background-image: url("/check.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #FFE783;
+}
+
+label {
+  width: 205px;
+  margin-left: 10px;
+}

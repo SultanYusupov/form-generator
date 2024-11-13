@@ -1,7 +1,16 @@
 <div class="form-container">
   <legend>{{inputData.labelName}}</legend>
-  @for (option of inputData.options; track $index) {
-    <input type="checkbox" [id]="inputData.inputName+$index" [name]="inputData.inputName" />
-    <label [for]="inputData.inputName+$index">{{option}}</label>
-  }
+  <div class="checkboxes">
+    @for (option of inputData.options; track $index) {
+      <div class="checkbox-item">
+        <input type="checkbox" [id]="inputData.inputName+$index" [name]="inputData.inputName" />
+        <label [for]="inputData.inputName+$index">{{option}}</label>
+      </div>
+    }
+    <div class="checkbox-item">
+      <input type="checkbox" id="check-all" [name]="inputData.inputName" checked />
+      <label for="check-all"><strong>Выделить все</strong></label>
+    </div>
+  </div>
+
 </div>
