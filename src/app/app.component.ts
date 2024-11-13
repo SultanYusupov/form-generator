@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {ApplicationRef, Component, inject, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   AbstractControl,
@@ -31,6 +31,7 @@ export class AppComponent implements OnInit{
   forms: IForm[] = [];
   bs = inject(BackendService);
   fb = inject(FormBuilder);
+  private appRef = inject(ApplicationRef);
   testForm!: FormGroup; // массив forms может быть пустым, поэтому знак вопроса
   ngOnInit() {
     this.getForms();
@@ -64,8 +65,8 @@ export class AppComponent implements OnInit{
     (this.testForm.get(inputName) as FormArray).push(this.fb.control(''));
   }
 
-  deleteFormControl(inputName: string, index: number) {
-    const control = this.testForm.get(inputName) as FormArray;
-    control.removeAt(index);
+  deleteFormControl(obj: {inputName: string, index: number}) {
+    const control = this.testForm.get(obj.inputName) as FormArray;
+    control.removeAt(obj.index);
   }
 }

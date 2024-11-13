@@ -4,10 +4,10 @@
     @for (form of forms; track form.id) {
       @switch (form.type) {
         @case ('text') {
-            <test-input [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName)"></test-input>
+            <test-input [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName)" (remove)="deleteFormControl($event)"></test-input>
         }
         @case ('number') {
-            <test-number [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName)"></test-number>
+            <test-number [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName)" (remove)="deleteFormControl($event)"></test-number>
         }
         @case ('select') {
           <test-select [inputData]="form"></test-select>

@@ -3,13 +3,14 @@
     @if (inputData.multiply) {
         <ng-container formArrayName="{{inputData.inputName}}">
           <div class="fields">
-            @for (control of getControls(); let i = $index; track i) {
+            <!-- От @for отказался, потому что с ним всегда удалялся последний элемент масива-->
+            <ng-container *ngFor="let control of getControls(); let i = index">
                 <div class="container-with-buttons">
                   <input type="text" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
-                  <remove-button *ngIf="inputData.multiply && i !== 0"></remove-button>
+                  <remove-button *ngIf="inputData.multiply && i !== 0" (click)="removeControlItem(i)"></remove-button>
                   <add-button *ngIf="inputData.multiply && i == getControls().length - 1" (click)="addControlItem()"></add-button>
                 </div>
-              }
+            </ng-container>
           </div>
 
         </ng-container>

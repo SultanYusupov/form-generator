@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 import {IForm} from '../../interfaces/IForm';
 import {AddButtonComponent} from '../add-button/add-button.component';
-import {NgIf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {RemoveButtonComponent} from '../remove-button/remove-button.component';
 
 @Component({
@@ -22,6 +22,7 @@ import {RemoveButtonComponent} from '../remove-button/remove-button.component';
     AddButtonComponent,
     NgIf,
     RemoveButtonComponent,
+    NgForOf,
   ],
   templateUrl: './test-input.component.html',
   styleUrl: './test-input.component.scss',
@@ -31,7 +32,7 @@ export class TestInputComponent {
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
   @Output() add: EventEmitter<void> = new EventEmitter();
-  @Output() remove: EventEmitter<object> = new EventEmitter();
+  @Output() remove: EventEmitter<{inputName: string, index: number}> = new EventEmitter();
 
   getControls() {
     return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
