@@ -32,8 +32,4 @@ export class TestInputComponent {
   getControls() {
     return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
   }
-
-  addFormControl(inputName: string) {
-    (this.fControl.get(inputName) as FormArray).push(new FormControl())
-  }
 }

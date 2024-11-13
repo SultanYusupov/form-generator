@@ -4,14 +4,16 @@
     @for (form of forms; track form.id) {
       @switch (form.type) {
         @case ('text') {
+          <div class="form-container">
             <test-input [inputData]="form" [fControl]="testForm"></test-input>
-<!--            <add-button *ngIf="form.multiply" (click)="addFormControl(form.inputName)"></add-button>-->
+            <add-button *ngIf="form.multiply" (click)="addFormControl(form.inputName)"></add-button>
+          </div>
         }
         @case ('number') {
-<!--          <div class="form-container">-->
+          <div class="form-container">
             <test-number [inputData]="form" [fControl]="testForm"></test-number>
-<!--            <add-button *ngIf="form.multiply" (click)="addFormControl(form.inputName)"></add-button>-->
-<!--          </div>-->
+            <add-button *ngIf="form.multiply" (click)="addFormControl(form.inputName)"></add-button>
+          </div>
         }
         @case ('select') {
           <test-select [inputData]="form"></test-select>

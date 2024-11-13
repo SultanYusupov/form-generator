@@ -1,13 +1,12 @@
-<div class="form-container" [formGroup]="fControl">
+<div class="form-item" [formGroup]="fControl">
   <label>{{inputData.labelName}}</label>
     @if (inputData.multiply) {
       <ng-container formArrayName="{{inputData.inputName}}">
+        <div class="field-container">
           @for (control of getControls(); let i = $index; track i) {
-            <div class="field-container">
               <input type="text" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
-            </div>
             }
-        <add-button *ngIf="inputData.multiply" (click)="addFormControl(inputData.inputName)"></add-button>
+        </div>
       </ng-container>
     } @else {
       <div class="field-container">
