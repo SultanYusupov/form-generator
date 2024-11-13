@@ -1,4 +1,4 @@
-<ng-container [formGroup]="fControl">
+<div class="form-container" [formGroup]="fControl">
 <label>{{inputData.labelName}}</label>
   @if (inputData.multiply) {
     <ng-container formArrayName="{{inputData.inputName}}">
@@ -15,4 +15,4 @@
           <number-button (increment)="incrementNumber()" (decrement)="decrementNumber()"></number-button>
     </div>
   }
-</ng-container>
+</div>

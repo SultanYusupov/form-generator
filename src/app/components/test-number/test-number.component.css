@@ -14,3 +14,12 @@ input[type='number'] {
 .input-number {
   display: inline-flex;
 }
+
+.form-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.field-container {
+  display: flex;
+}
