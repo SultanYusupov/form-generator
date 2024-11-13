@@ -1,6 +1,11 @@
 label {
   height: 24px;
 }
+
 input {
+  width: 300px;
+}
+
+input[name=name] {
   width: 500px;
 }

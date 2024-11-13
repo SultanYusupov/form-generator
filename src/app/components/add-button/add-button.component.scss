@@ -1,11 +1,16 @@
 .ellipse {
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
+  top: 22px;
   width: 26px;
   height: 26px;
   background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 50%;
+}
+
+.button {
+  margin-left: 15px;
 }
 
 .vector {
