@@ -1,4 +1,4 @@
-.form-container {
+.form-item {
   display: flex;
   align-items: baseline;
 }
@@ -17,4 +17,5 @@ input[name=name] {
 
 .field-container {
   display: flex;
+  flex-direction: column;
 }
