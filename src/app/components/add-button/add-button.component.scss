@@ -1,18 +1,18 @@
 .ellipse {
   box-sizing: border-box;
-  position: relative;
-  //top: 22px;
-  bottom: 2px;
   width: 26px;
   height: 26px;
   background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
   margin-left: 15px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   display: flex;
   cursor: pointer;
 }
@@ -25,18 +25,10 @@
 }
 
 .vertical {
-  left: 5px;
-  top: 11px;
   transform: rotate(90deg);
-}
-
-.horizontal {
-  left: 5px;
-  top: 11px;
 }
 
 .text {
   margin-left: 7px;
   font-size: 17px;
-  //line-height: 22px;
 }

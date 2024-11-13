@@ -1,17 +1,18 @@
 .button {
   margin-left: 15px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   cursor: pointer;
 }
 
 .ellipse {
   box-sizing: border-box;
-  position: relative;
-  bottom: 2px;
   width: 26px;
   height: 26px;
   background: #FC6363;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vector {
@@ -22,13 +23,9 @@
 }
 
 .vertical {
-  left: 5px;
-  top: 11px;
   transform: rotate(-45deg);
 }
 
 .horizontal {
-  left: 5px;
-  top: 11px;
   transform: rotate(45deg);
 }
