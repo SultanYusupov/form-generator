@@ -12,7 +12,7 @@
         }
     </ng-container>
   } @else {
-    <div class="input-number">
+    <div class="container-with-buttons">
           <input type="number" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
           <number-button (increment)="incrementNumber()" (decrement)="decrementNumber()"></number-button>
     </div>
