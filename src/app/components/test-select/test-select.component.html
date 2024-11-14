@@ -1,19 +1,13 @@
 <div class="form-container">
-<!--  <label>{{inputData.labelName}}</label>-->
-<!--  <select [required]="inputData.required" [ngClass]="opened ? 'opened' : 'closed'" (click)="openSelect()">-->
-<!--    @for (option of inputData.options; track $index) {-->
-<!--      <option>{{option}}</option>-->
-<!--    }-->
-<!--  </select>-->
     <label>{{inputData.labelName}}</label>
   <div class="select-container">
     <div class="select-selected" [ngClass]="opened ? 'opened' : 'closed'" (click)="openSelect()">
-      Не важно
+      {{selectedOption}}
     </div>
     <div class="select-items" [ngClass]="opened ? 'select-opened' : 'select-closed'">
-      <div>Select Option 1</div>
-      <div>Select Option 2</div>
-      <div>Select Option 3</div>
+          @for (option of inputData.options; track $index) {
+            <div (click)="select(option)" [ngClass]="option == selectedOption ? 'selected' : ''">{{option}}</div>
+          }
     </div>
   </div>
 </div>

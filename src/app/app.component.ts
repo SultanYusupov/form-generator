@@ -46,6 +46,7 @@ export class AppComponent implements OnInit{
   }
 
   createForm() {
+    let defaultValue: string;
     this.forms.forEach(el => {
       if (el.multiply) {
         // control = this.fb.array(el.options as string[], el.required ? Validators.required : null);
@@ -55,7 +56,8 @@ export class AppComponent implements OnInit{
         control.push(this.fb.control(''));
       }
       else {
-        const control: FormControl<string | null> = this.fb.control('', el.required ? Validators.required : null);
+        defaultValue = (el.type == 'select' && el.options) ? el.options[0] : '';
+        const control: FormControl<string | null> = this.fb.control(defaultValue, el.required ? Validators.required : null);
         this.testForm.addControl(el.inputName, control);
       }
     })
