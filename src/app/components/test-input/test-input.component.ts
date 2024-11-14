@@ -41,6 +41,8 @@ export class TestInputComponent implements OnInit {
   ngOnInit() {
     if (this.inputData.multiply) {
       this.fControl.addControl(this.inputData.inputName, new FormArray([]));
+      const controlArray = this.fControl.get(this.inputData.inputName) as FormArray;
+      controlArray.push(new FormControl(''));
     }
     else {
       this.fControl.addControl(this.inputData.inputName, new FormControl(''))
