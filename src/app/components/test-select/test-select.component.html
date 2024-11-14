@@ -5,8 +5,8 @@
       {{selectedOption}}
     </div>
     <div class="select-items" [ngClass]="opened ? 'select-opened' : 'select-closed'">
-          @for (option of inputData.options; track $index) {
-            <div (click)="select(option)" [ngClass]="option == selectedOption ? 'selected' : ''">{{option}}</div>
+          @for (option of inputData.options; track option.id) {
+            <div (click)="select(option.value)" [ngClass]="option.value == selectedOption ? 'selected' : ''">{{option.value}}</div>
           }
     </div>
   </div>

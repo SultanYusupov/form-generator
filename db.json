@@ -4,8 +4,16 @@
     { "id": "2", "labelName": "Возраст", "inputName": "age", "type": "number", "required": true, "min": 16, "max": 80},
     { "id": "3", "labelName": "Семейное положение", "inputName": "maritalStatus", "required": true, "type": "select",
       "options": [
-        "Не женат/не замужем",
-        "Женат/замужем"
+        {
+          "id": 0,
+          "value": "Не женат/не замужем",
+          "selected": false
+        },
+        {
+          "id": 1,
+          "value": "Женат/замужем",
+          "selected": false
+        }
       ]
     },
     { "id": "4", "labelName": "ВУЗ", "inputName": "university", "type": "text", "required": false, "multiply": true,
@@ -13,13 +21,41 @@
       "ВолГУ", "ВИУ", "ВГСПУ"
     ] },
     { "id": "5", "labelName": "Место рождения", "inputName": "placeOfBirth", "type": "select", "required": false, "options": [
-      "Не важно",
-      "Астрахань",
-      "Волгоград",
-      "Волжский",
-      "Ростов-на-Дону",
-      "Саратов",
-      "Элиста"
+      {
+        "id": 0,
+        "value": "Не важно",
+        "selected": false
+      },
+      {
+        "id": 1,
+        "value": "Астрахань",
+        "selected": false
+      },
+      {
+        "id": 2,
+        "value": "Волгоград",
+        "selected": false
+      },
+      {
+        "id": 3,
+        "value": "Волжский",
+        "selected": false
+      },
+      {
+        "id": 4,
+        "value": "Ростов-на-Дону",
+        "selected": false
+      },
+      {
+        "id": 5,
+        "value": "Саратов",
+        "selected": false
+      },
+      {
+        "id": 6,
+        "value": "Элиста",
+        "selected": false
+      }
     ] },
     { "id": "6", "labelName": "Навыки", "inputName": "skills", "type": "checkbox", "required": false, "options": [
       {
