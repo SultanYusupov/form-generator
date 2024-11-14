@@ -24,11 +24,20 @@ export class TestSelectComponent implements OnInit{
   ngOnInit() {
     if (this.inputData.multiply) {
       this.fControl.addControl(this.inputData.inputName, new FormArray([]));
+      this.getFormArray().push(new FormControl(this.inputData!.options![0].value));
     }
     else {
-      this.fControl.addControl(this.inputData.inputName, new FormControl(''))
+      this.fControl.addControl(this.inputData.inputName, new FormControl(this.inputData!.options![0].value));
     }
-    // this.selectedOption = this.fControl.get(this.inputData.inputName)?.value;
+    this.selectedOption = this.inputData.options![0].value;
+    this.inputData.options![0].selected = true;
+  }
+
+  getFormArray() {
+    return (this.fControl.get(this.inputData.inputName) as FormArray);
+  }
+  get selectedOptions() {
+    return this.inputData.options!.filter(op => op.selected);
   }
 
   openSelect() {
@@ -36,21 +45,21 @@ export class TestSelectComponent implements OnInit{
   }
 
   select(option: {id: number, value: string, selected: boolean}) {
-    const formArray = (this.fControl.get(this.inputData.inputName) as FormArray);
     if (this.inputData.multiply) {
-      const controlId = formArray.controls.findIndex(ctrl => ctrl.value === option.value);
       if (option.selected) {
-        // (this.fControl.get(this.inputData.inputName) as FormArray).removeAt(controlId);
+        const controlId = this.getFormArray().controls.findIndex(ctrl => ctrl.value === option.value);
         this.remove.emit({inputName: this.inputData.inputName, index: controlId})
-        this.selectedOption = formArray.controls[formArray.controls.length - 1]?.value ?? '';
+        this.selectedOption = this.getFormArray().controls[this.getFormArray().controls.length - 1]?.value ?? '';
       }
       else {
-        // formArray.push(new FormControl(option.value));
         this.add.emit(option.value);
-        this.selectedOption = formArray.controls[formArray.controls.length - 1].value;
+        this.selectedOption = this.getFormArray().controls[this.getFormArray().controls.length - 1].value;
       }
     }
     else {
+      if (this.selectedOptions.length > 0) {
+        this.inputData.options?.map(el => el.selected = false);
+      }
       this.fControl.get(this.inputData.inputName)?.setValue(option.value);
       this.selectedOption = option.value;
     }
