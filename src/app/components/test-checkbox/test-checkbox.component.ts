@@ -42,7 +42,7 @@ export class TestCheckboxComponent implements OnInit{
     }
     else {
       this.inputData.options?.forEach(option => {
-        this.remove.emit({inputName: this.inputData.inputName, index: option.index});
+        this.remove.emit({inputName: this.inputData.inputName, index: option.id});
       });
 
     }
