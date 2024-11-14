@@ -13,7 +13,7 @@
           <test-select [inputData]="form" [fControl]="testForm"></test-select>
         }
         @case ('checkbox') {
-          <test-checkbox [inputData]="form"></test-checkbox>
+          <test-checkbox [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName, $event)" (remove)="deleteFormControl($event)"></test-checkbox>
         }
       }
     }

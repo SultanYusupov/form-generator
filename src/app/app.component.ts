@@ -63,12 +63,14 @@ export class AppComponent implements OnInit{
     })
   }
 
-  addFormControl(inputName: string) {
-    (this.testForm.get(inputName) as FormArray).push(this.fb.control(''));
+  addFormControl(inputName: string, value:string = '') {
+    (this.testForm.get(inputName) as FormArray).push(this.fb.control(value));
+    console.log(this.testForm);
   }
 
   deleteFormControl(obj: {inputName: string, index: number}) {
     const control = this.testForm.get(obj.inputName) as FormArray;
     control.removeAt(obj.index);
+    console.log(this.testForm);
   }
 }
