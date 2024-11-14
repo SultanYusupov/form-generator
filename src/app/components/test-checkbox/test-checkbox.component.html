@@ -1,16 +1,19 @@
-<div class="form-container">
+<div class="form-container" [formGroup]="fControl">
   <legend>{{inputData.labelName}}</legend>
   <div class="checkboxes">
-    @for (option of inputData.options; track $index) {
+      <ng-container *ngFor="let option of inputData.options; let $index = index">
       <div class="checkbox-item">
-        <input type="checkbox" [id]="inputData.inputName+$index" [name]="inputData.inputName" />
+        <input type="checkbox" [id]="inputData.inputName+$index"
+               [name]="inputData.inputName"
+               [value]="option"
+               formArrayName="{{inputData.inputName}}"
+               (change)="choseOption($event, $index)" />
         <label [for]="inputData.inputName+$index">{{option}}</label>
       </div>
-    }
+      </ng-container>
     <div class="checkbox-item">
       <input type="checkbox" id="check-all" [name]="inputData.inputName" />
       <label for="check-all"><strong>Выделить все</strong></label>
     </div>
   </div>
-
 </div>
