@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IInput} from '../../interfaces/IInput';
-import {AbstractControl, FormArray, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {IForm} from '../../interfaces/IForm';
 import {NumberButtonComponent} from '../number-button/number-button.component';
 import {AddButtonComponent} from '../add-button/add-button.component';
@@ -21,7 +21,7 @@ import {RemoveButtonComponent} from '../remove-button/remove-button.component';
   templateUrl: './test-number.component.html',
   styleUrl: './test-number.component.css'
 })
-export class TestNumberComponent {
+export class TestNumberComponent implements OnInit {
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
   @Output() add: EventEmitter<void> = new EventEmitter();
@@ -29,6 +29,15 @@ export class TestNumberComponent {
 
   getControls() {
     return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
+  }
+
+  ngOnInit() {
+    if (this.inputData.multiply) {
+      this.fControl.addControl(this.inputData.inputName, new FormArray([]));
+    }
+    else {
+      this.fControl.addControl(this.inputData.inputName, new FormControl(''))
+    }
   }
 
   addControlItem() {

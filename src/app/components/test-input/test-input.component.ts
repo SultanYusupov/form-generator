@@ -1,4 +1,4 @@
-import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
+import {Component, EventEmitter, inject, Input, OnInit, Output} from '@angular/core';
 import {IInput} from '../../interfaces/IInput';
 import {
   ControlContainer,
@@ -28,7 +28,7 @@ import {RemoveButtonComponent} from '../remove-button/remove-button.component';
   styleUrl: './test-input.component.scss',
   // viewProviders: [{ provide: ControlContainer, useExisting: FormGroupName }]
 })
-export class TestInputComponent {
+export class TestInputComponent implements OnInit {
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
   @Output() add: EventEmitter<void> = new EventEmitter();
@@ -36,6 +36,15 @@ export class TestInputComponent {
 
   getControls() {
     return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
+  }
+
+  ngOnInit() {
+    if (this.inputData.multiply) {
+      this.fControl.addControl(this.inputData.inputName, new FormArray([]));
+    }
+    else {
+      this.fControl.addControl(this.inputData.inputName, new FormControl(''))
+    }
   }
 
   addControlItem() {

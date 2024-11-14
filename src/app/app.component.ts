@@ -41,26 +41,7 @@ export class AppComponent implements OnInit{
   getForms() {
     this.bs.getFormList().subscribe(data => {
       this.forms = data;
-      this.createForm();
     });
-  }
-
-  createForm() {
-    let defaultValue: string;
-    this.forms.forEach(el => {
-      if (el.multiply) {
-        // control = this.fb.array(el.options as string[], el.required ? Validators.required : null);
-        const formArray: FormArray<FormControl<any>> = this.fb.array([]);
-        this.testForm.addControl(el.inputName, formArray);
-        const control: FormArray = this.testForm.get(el.inputName) as FormArray;
-        control.push(this.fb.control(''));
-      }
-      else {
-        defaultValue = (el.type == 'select' && el.options) ? el.options[0] : '';
-        const control: FormControl<string | null> = this.fb.control(defaultValue, el.required ? Validators.required : null);
-        this.testForm.addControl(el.inputName, control);
-      }
-    })
   }
 
   addFormControl(inputName: string, value:string = '') {
@@ -71,6 +52,5 @@ export class AppComponent implements OnInit{
   deleteFormControl(obj: {inputName: string, index: number}) {
     const control = this.testForm.get(obj.inputName) as FormArray;
     control.removeAt(obj.index);
-    console.log(this.testForm);
   }
 }
