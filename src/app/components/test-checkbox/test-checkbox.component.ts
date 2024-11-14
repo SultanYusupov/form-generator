@@ -1,8 +1,7 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IInput} from '../../interfaces/IInput';
 import {IForm} from '../../interfaces/IForm';
-import {FormArray, FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgForOf} from '@angular/common';
+import {FormArray, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'test-checkbox',
@@ -10,12 +9,11 @@ import {NgForOf} from '@angular/common';
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    NgForOf
   ],
   templateUrl: './test-checkbox.component.html',
   styleUrl: './test-checkbox.component.css'
 })
-export class TestCheckboxComponent {
+export class TestCheckboxComponent implements OnInit{
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
   @Output() add: EventEmitter<string> = new EventEmitter();
@@ -25,7 +23,7 @@ export class TestCheckboxComponent {
     this.fControl.addControl(this.inputData.inputName, new FormArray([]));
   }
 
-  choseOption($event:Event, index: number) {
+  changeCheckbox($event:Event, index: number) {
     const checkStatus = ($event.target as HTMLInputElement).checked;
     if (checkStatus) {
       const inputValue = ($event.target as HTMLInputElement).value;
@@ -33,5 +31,21 @@ export class TestCheckboxComponent {
     } else {
       this.remove.emit({inputName: this.inputData.inputName, index: index});
     }
+  }
+
+  checkAll($event:Event) {
+    const checkStatus = ($event.target as HTMLInputElement).checked;
+    if (checkStatus) {
+      this.inputData.options?.forEach(option => {
+        this.add.emit(option.value);
+      });
+    }
+    else {
+      this.inputData.options?.forEach(option => {
+        this.remove.emit({inputName: this.inputData.inputName, index: option.index});
+      });
+
+    }
+    this.inputData.options?.map(el => el.selected = !el.selected)
   }
 }

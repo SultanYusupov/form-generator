@@ -22,15 +22,51 @@
       "Элиста"
     ] },
     { "id": "6", "labelName": "Навыки", "inputName": "skills", "type": "checkbox", "required": false, "options": [
-      "Общение",
-      "Иностранные языки",
-      "Бег с препятствиями",
-      "Быстрое чтение",
-      "Самозащита",
-      "Вождение",
-      "Программирование",
-      "Управление вертолетом",
-      "Оперное пение"
+      {
+        "id": 0,
+        "value": "Общение",
+        "selected": false
+      },
+      {
+        "id": 1,
+        "value": "Иностранные языки",
+        "selected": false
+      },
+      {
+        "id": 2,
+        "value": "Бег с препятствиями",
+        "selected": false
+      },
+      {
+        "id": 3,
+        "value": "Быстрое чтение",
+        "selected": false
+      },
+      {
+        "id": 4,
+        "value": "Самозащита",
+        "selected": false
+      },
+      {
+        "id": 5,
+        "value": "Вождение",
+        "selected": false
+      },
+      {
+        "id": 6,
+        "value": "Программирование",
+        "selected": false
+      },
+      {
+        "id": 7,
+        "value": "Управление вертолетом",
+        "selected": false
+      },
+      {
+        "id": 8,
+        "value": "Оперное пение",
+        "selected": false
+      }
     ] }
   ]
 }
