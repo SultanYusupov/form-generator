@@ -1,0 +1,108 @@
+/*select {*/
+/*  appearance: none;*/
+/*  padding-right: 1.2em;*/
+/*  background-repeat: no-repeat;*/
+/*  background-position: calc(100% - 9px) 1em;*/
+/*}*/
+/*.closed {*/
+/*  background-image: url("/arrow-down.svg");*/
+/*}*/
+
+/*.opened{*/
+/*  background-image: url("/arrow-up.svg");*/
+/*}*/
+
+
+/*.custom-select {*/
+/*  position: relative;*/
+/*  display: inline-block;*/
+/*}*/
+
+/*.select-selected {*/
+/*  background-color: #f7f7f7;*/
+/*  color: #333333;*/
+/*  padding: 5px 10px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*!* Style the dropdown items *!*/
+/*.select-items {*/
+/*  position: absolute;*/
+/*  display: none;*/
+/*  background-color: #d88181;*/
+/*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*  border-radius: 4px;*/
+/*  z-index: 1;*/
+/*  width: 100%;*/
+/*}*/
+
+/*!* Style the dropdown items *!*/
+/*.select-items div {*/
+/*  padding: 10px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*!* Style the dropdown items on hover *!*/
+/*.select-items div:hover {*/
+/*  background-color: #c69c9c;*/
+/*}*/
+
+.select-container {
+  cursor: pointer;
+  position: relative;
+  width: 300px;
+}
+.select-selected {
+  margin-left: 17px;
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+  padding-top: 12px;
+  padding-left: 15px;
+  background: #FFFFFF no-repeat calc(100% - 9px) 1em;
+}
+
+.closed {
+  background-image: url("/arrow-down.svg");
+}
+
+.opened{
+  background-image: url("/arrow-up.svg");
+}
+
+.select-items {
+  width: 99.3%;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid #D7D7D7;
+  border-top: 0;
+  box-shadow: 4px 3px 1px 0 rgba(215, 215, 215, 0.7);
+  padding-bottom: 9px;
+  /*position: relative;*/
+  left: 17px;
+  position: absolute;
+  background-color: #FFFFFF;
+  z-index: 1;
+}
+
+.select-items > div {
+  height: 26px;
+  padding-top: 4px;
+  padding-left: 15px;
+}
+.select-items > div:hover {
+  background: #FFE783;
+}
+
+/*.selected {*/
+/*  background-color: #FFDA42;*/
+/*}*/
+
+.select-opened {
+  display: block;
+}
+
+.select-closed {
+  display: none;
+}
