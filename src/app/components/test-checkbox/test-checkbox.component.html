@@ -1,5 +1,5 @@
 <div class="form-container" [formGroup]="fControl">
-  <legend>{{inputData.labelName}}</legend>
+  <legend>{{inputData.labelName}}<span *ngIf="inputData.required" [style.color]="'red'">*</span></legend>
   <div class="checkboxes">
     @for (option of inputData.options; track option.id) {
       <div class="checkbox-item" formArrayName="{{inputData.inputName}}">

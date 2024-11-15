@@ -1,14 +1,15 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IForm} from '../../interfaces/IForm';
-import {NgClass} from '@angular/common';
-import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {NgClass, NgIf} from '@angular/common';
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IOption} from '../../interfaces/IOption';
 
 @Component({
   selector: 'test-select',
   standalone: true,
   imports: [
-    NgClass
+    NgClass,
+    NgIf
   ],
   templateUrl: './test-select.component.html',
   styleUrl: './test-select.component.css'
@@ -24,11 +25,11 @@ export class TestSelectComponent implements OnInit{
   ngOnInit() {
     const defaultValue:string = this.defaultOption == -1 ? '' : this.inputData!.options![this.defaultOption].value;
     if (this.inputData.multiply) {
-      this.fControl.addControl(this.inputData.inputName, new FormArray([]));
+      this.fControl.addControl(this.inputData.inputName, new FormArray([], this.inputData.required ? Validators.required : null));
       this.getFormArray().push(new FormControl(defaultValue));
     }
     else {
-      this.fControl.addControl(this.inputData.inputName, new FormControl(defaultValue));
+      this.fControl.addControl(this.inputData.inputName, new FormControl(defaultValue, this.inputData.required ? Validators.required : null));
     }
     this.selectedOption = defaultValue;
   }

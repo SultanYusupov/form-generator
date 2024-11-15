@@ -1,5 +1,5 @@
 <div class="form-container" [formGroup]="fControl">
-  <label>{{inputData.labelName}}</label>
+  <label>{{inputData.labelName}}<span *ngIf="inputData.required" [style.color]="'red'">*</span></label>
     @if (inputData.multiply) {
         <ng-container formArrayName="{{inputData.inputName}}">
           <div class="fields">

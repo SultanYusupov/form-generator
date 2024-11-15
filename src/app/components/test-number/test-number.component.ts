@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {IForm} from '../../interfaces/IForm';
 import {NumberButtonComponent} from '../number-button/number-button.component';
 import {AddButtonComponent} from '../add-button/add-button.component';
@@ -32,12 +32,12 @@ export class TestNumberComponent implements OnInit {
 
   ngOnInit() {
     if (this.inputData.multiply) {
-      this.fControl.addControl(this.inputData.inputName, new FormArray([]));
+      this.fControl.addControl(this.inputData.inputName, new FormArray([], this.inputData.required ? Validators.required : null));
       const controlArray = this.fControl.get(this.inputData.inputName) as FormArray;
       controlArray.push(new FormControl(''))
     }
     else {
-      this.fControl.addControl(this.inputData.inputName, new FormControl(''))
+      this.fControl.addControl(this.inputData.inputName, new FormControl('', this.inputData.required ? Validators.required : null))
     }
   }
 

@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IForm} from '../../interfaces/IForm';
-import {FormArray, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormArray, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {IOption} from '../../interfaces/IOption';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'test-checkbox',
@@ -9,6 +10,7 @@ import {IOption} from '../../interfaces/IOption';
   imports: [
     ReactiveFormsModule,
     FormsModule,
+    NgIf,
   ],
   templateUrl: './test-checkbox.component.html',
   styleUrl: './test-checkbox.component.css'
@@ -20,7 +22,7 @@ export class TestCheckboxComponent implements OnInit{
   @Output() remove: EventEmitter<{inputName: string, index: number}> = new EventEmitter();
 
   ngOnInit() {
-    this.fControl.addControl(this.inputData.inputName, new FormArray([]));
+    this.fControl.addControl(this.inputData.inputName, new FormArray([], this.inputData.required ? Validators.required : null));
   }
 
   changeCheckbox($event:Event, index: number) {
