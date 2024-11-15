@@ -1,5 +1,4 @@
-import {Component, EventEmitter, inject, Input, OnInit, Output} from '@angular/core';
-import {IInput} from '../../interfaces/IInput';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {
   ControlContainer,
   FormArray,

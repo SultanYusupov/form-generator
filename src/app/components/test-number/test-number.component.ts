@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IInput} from '../../interfaces/IInput';
 import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {IForm} from '../../interfaces/IForm';
 import {NumberButtonComponent} from '../number-button/number-button.component';
