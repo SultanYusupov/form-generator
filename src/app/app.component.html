@@ -1,6 +1,6 @@
 <div class="form-block">
   <p class="title">Анкета</p>
-  <form [formGroup]="testForm">
+  <form [formGroup]="testForm" (ngSubmit)="onSubmit(testForm)">
     @for (form of forms; track form.id) {
       @switch (form.type) {
         @case ('text') {
@@ -17,6 +17,6 @@
         }
       }
     }
-    <submit (click)="submitForm()" class="submit-button" [isDisabled]="validForm"></submit>
+    <submit class="submit-button" [isDisabled]="validForm"></submit>
   </form>
 </div>

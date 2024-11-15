@@ -93,8 +93,10 @@ export class AppComponent implements OnInit{
     control.removeAt(obj.index);
   }
 
-  submitForm() {
-    console.log(this.validForm);
-    console.log(this.testForm);
+  onSubmit(form: FormGroup) {
+    this.bs.submitForm(form.value).subscribe(data => {
+      console.log(data);
+      this.testForm.reset();
+    });
   }
 }
