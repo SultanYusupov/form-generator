@@ -36,7 +36,6 @@ export class AppComponent implements OnInit{
   forms: IForm[] = [];
   bs = inject(BackendService);
   fb = inject(FormBuilder);
-  private cdr = inject(ChangeDetectorRef);
   testForm!: FormGroup; // массив forms может быть пустым, поэтому знак вопроса
   ngOnInit() {
     this.getForms();

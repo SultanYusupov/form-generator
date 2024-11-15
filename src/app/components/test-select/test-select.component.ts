@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IForm} from '../../interfaces/IForm';
 import {NgClass, NgIf} from '@angular/common';
-import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormGroup} from '@angular/forms';
 import {IOption} from '../../interfaces/IOption';
 
 @Component({
