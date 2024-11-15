@@ -1,24 +1,14 @@
+@import "../../../styles";
 .button {
-  margin-left: 15px;
-  cursor: pointer;
+  @include btn;
 }
 
 .ellipse {
-  box-sizing: border-box;
-  width: 26px;
-  height: 26px;
-  background: #FC6363;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include ellipse(#FC6363);
 }
 
 .vector {
-  position: absolute;
-  width: 14px;
-  height: 0;
-  border: 1px solid #FFFFFF;
+  @include vector(#FFFFFF);
 }
 
 .vertical {

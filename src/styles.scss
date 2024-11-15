@@ -7,6 +7,27 @@ body {
 $marginIndent: 17px;
 $labelWidth: 140px;
 
+@mixin ellipse($b-color) {
+  box-sizing: border-box;
+  width: 26px;
+  height: 26px;
+  background: $b-color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin btn {
+  margin-left: 15px;
+  cursor: pointer;
+}
+@mixin vector($border-color) {
+  position: absolute;
+  width: 14px;
+  height: 0;
+  border: 1px solid $border-color;
+}
+
 input, select {
   margin-left: $marginIndent;
   padding: 13px 15px 10px 15px;

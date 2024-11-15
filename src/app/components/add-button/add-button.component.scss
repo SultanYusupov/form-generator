@@ -1,26 +1,16 @@
-.ellipse {
-  box-sizing: border-box;
-  width: 26px;
-  height: 26px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  border-radius: 50%;
+@import "../../../styles";
+.button {
+  @include btn;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.button {
-  margin-left: 15px;
-  display: flex;
-  cursor: pointer;
+.ellipse {
+  @include ellipse(#FFFFFF);
+  border: 1px solid #000000;
 }
 
 .vector {
-  position: absolute;
-  width: 14px;
-  height: 0;
-  border: 1px solid #000000;
+  @include vector(#000000);
 }
 
 .vertical {
