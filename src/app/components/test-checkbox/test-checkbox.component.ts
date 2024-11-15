@@ -13,7 +13,7 @@ import {NgIf} from '@angular/common';
     NgIf,
   ],
   templateUrl: './test-checkbox.component.html',
-  styleUrl: './test-checkbox.component.css'
+  styleUrl: './test-checkbox.component.scss'
 })
 export class TestCheckboxComponent {
   @Input() inputData!: IForm;

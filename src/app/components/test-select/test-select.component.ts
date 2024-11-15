@@ -12,7 +12,7 @@ import {IOption} from '../../interfaces/IOption';
     NgIf
   ],
   templateUrl: './test-select.component.html',
-  styleUrl: './test-select.component.css'
+  styleUrl: './test-select.component.scss'
 })
 export class TestSelectComponent implements OnInit{
   @Input() inputData!: IForm;

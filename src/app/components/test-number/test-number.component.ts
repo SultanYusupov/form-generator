@@ -18,7 +18,7 @@ import {RemoveButtonComponent} from '../remove-button/remove-button.component';
     NgForOf
   ],
   templateUrl: './test-number.component.html',
-  styleUrl: './test-number.component.css'
+  styleUrl: './test-number.component.scss'
 })
 export class TestNumberComponent {
   @Input() inputData!: IForm;
