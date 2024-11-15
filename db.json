@@ -1,8 +1,27 @@
 {
   "forms": [
-    { "id": "1", "labelName": "Имя", "inputName": "name", "type": "text", "required": true },
-    { "id": "2", "labelName": "Возраст", "inputName": "age", "type": "number", "required": true, "min": 16, "max": 80},
-    { "id": "3", "labelName": "Семейное положение", "inputName": "maritalStatus", "required": true, "type": "select",
+    {
+      "id": "1",
+      "labelName": "Имя",
+      "inputName": "name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "2",
+      "labelName": "Возраст",
+      "inputName": "age",
+      "type": "number",
+      "required": true,
+      "min": 16,
+      "max": 80
+    },
+    {
+      "id": "3",
+      "labelName": "Семейное положение",
+      "inputName": "maritalStatus",
+      "required": true,
+      "type": "select",
       "options": [
         {
           "id": 0,
@@ -16,93 +35,117 @@
         }
       ]
     },
-    { "id": "4", "labelName": "ВУЗ", "inputName": "university", "type": "text", "required": false, "multiply": true,
+    {
+      "id": "4",
+      "labelName": "ВУЗ",
+      "inputName": "university",
+      "type": "text",
+      "required": false,
+      "multiply": true,
       "options": [
-      "ВолГУ", "ВИУ", "ВГСПУ"
-    ] },
-    { "id": "5", "labelName": "Место рождения", "inputName": "placeOfBirth", "type": "select", "required": false, "options": [
-      {
-        "id": 0,
-        "value": "Не важно",
-        "selected": true
-      },
-      {
-        "id": 1,
-        "value": "Астрахань",
-        "selected": false
-      },
-      {
-        "id": 2,
-        "value": "Волгоград",
-        "selected": false
-      },
-      {
-        "id": 3,
-        "value": "Волжский",
-        "selected": false
-      },
-      {
-        "id": 4,
-        "value": "Ростов-на-Дону",
-        "selected": false
-      },
-      {
-        "id": 5,
-        "value": "Саратов",
-        "selected": false
-      },
-      {
-        "id": 6,
-        "value": "Элиста",
-        "selected": false
-      }
-    ] },
-    { "id": "6", "labelName": "Навыки", "inputName": "skills", "type": "checkbox", "required": false, "options": [
-      {
-        "id": 0,
-        "value": "Общение",
-        "selected": false
-      },
-      {
-        "id": 1,
-        "value": "Иностранные языки",
-        "selected": false
-      },
-      {
-        "id": 2,
-        "value": "Бег с препятствиями",
-        "selected": false
-      },
-      {
-        "id": 3,
-        "value": "Быстрое чтение",
-        "selected": false
-      },
-      {
-        "id": 4,
-        "value": "Самозащита",
-        "selected": false
-      },
-      {
-        "id": 5,
-        "value": "Вождение",
-        "selected": false
-      },
-      {
-        "id": 6,
-        "value": "Программирование",
-        "selected": false
-      },
-      {
-        "id": 7,
-        "value": "Управление вертолетом",
-        "selected": false
-      },
-      {
-        "id": 8,
-        "value": "Оперное пение",
-        "selected": false
-      }
-    ] }
-  ]
+        "ВолГУ",
+        "ВИУ",
+        "ВГСПУ"
+      ]
+    },
+    {
+      "id": "5",
+      "labelName": "Место рождения",
+      "inputName": "placeOfBirth",
+      "type": "select",
+      "required": false,
+      "options": [
+        {
+          "id": 0,
+          "value": "Не важно",
+          "selected": true
+        },
+        {
+          "id": 1,
+          "value": "Астрахань",
+          "selected": false
+        },
+        {
+          "id": 2,
+          "value": "Волгоград",
+          "selected": false
+        },
+        {
+          "id": 3,
+          "value": "Волжский",
+          "selected": false
+        },
+        {
+          "id": 4,
+          "value": "Ростов-на-Дону",
+          "selected": false
+        },
+        {
+          "id": 5,
+          "value": "Саратов",
+          "selected": false
+        },
+        {
+          "id": 6,
+          "value": "Элиста",
+          "selected": false
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "labelName": "Навыки",
+      "inputName": "skills",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        {
+          "id": 0,
+          "value": "Общение",
+          "selected": false
+        },
+        {
+          "id": 1,
+          "value": "Иностранные языки",
+          "selected": false
+        },
+        {
+          "id": 2,
+          "value": "Бег с препятствиями",
+          "selected": false
+        },
+        {
+          "id": 3,
+          "value": "Быстрое чтение",
+          "selected": false
+        },
+        {
+          "id": 4,
+          "value": "Самозащита",
+          "selected": false
+        },
+        {
+          "id": 5,
+          "value": "Вождение",
+          "selected": false
+        },
+        {
+          "id": 6,
+          "value": "Программирование",
+          "selected": false
+        },
+        {
+          "id": 7,
+          "value": "Управление вертолетом",
+          "selected": false
+        },
+        {
+          "id": 8,
+          "value": "Оперное пение",
+          "selected": false
+        }
+      ]
+    }
+  ],
+  "submittedForm": []
 }
