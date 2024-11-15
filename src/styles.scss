@@ -56,7 +56,7 @@ label, legend {
   margin-bottom: 15px;
 }
 
-.submit-button {
+.submit-button, .hint{
   position: relative;
   left: $labelWidth + $marginIndent;
 }

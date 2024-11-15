@@ -6,7 +6,11 @@
             <!-- От @for отказался, потому что с ним всегда удалялся последний элемент масива-->
             <ng-container *ngFor="let control of getControls(); let i = index">
                 <div class="container-with-buttons">
-                  <input type="text" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
+                  <input type="text" [name]="inputData.inputName"
+                         [formControlName]="i"
+                         [required]="inputData.required"
+                         [placeholder]="inputData.placeholder"
+                  >
                   <remove-button *ngIf="inputData.multiply && i !== 0" (click)="removeControlItem(i)"></remove-button>
                   <add-button *ngIf="inputData.multiply && i == getControls().length - 1" (click)="addControlItem()"></add-button>
                 </div>

@@ -8,6 +8,8 @@ export interface IForm {
   required: boolean,
   multiply?: boolean,
   options?: IOption[],
+  hint: string,
+  placeholder: string,
   min: number | null,
   max: number | null
 }

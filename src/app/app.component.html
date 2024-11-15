@@ -16,6 +16,9 @@
           <test-checkbox [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName, $event)" (remove)="deleteFormControl($event)"></test-checkbox>
         }
       }
+      @if (form.hint) {
+        <p class="hint">{{form.hint}}</p>
+      }
     }
     <submit class="submit-button" [isDisabled]="validForm"></submit>
   </form>
