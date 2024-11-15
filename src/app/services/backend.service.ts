@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IForm} from '../interfaces/IForm';
-import {NgForm} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
