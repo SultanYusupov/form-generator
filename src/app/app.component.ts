@@ -18,11 +18,12 @@ import {TestSelectComponent} from './components/test-select/test-select.componen
 import {TestCheckboxComponent} from './components/test-checkbox/test-checkbox.component';
 import {AddButtonComponent} from './components/add-button/add-button.component';
 import {RemoveButtonComponent} from './components/remove-button/remove-button.component';
+import {SubmitButtonComponent} from './components/submit-button/submit-button.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, TestInputComponent, NgForOf, TestNumberComponent, TestSelectComponent, TestCheckboxComponent, AddButtonComponent, NgIf, RemoveButtonComponent],
+  imports: [RouterOutlet, ReactiveFormsModule, TestInputComponent, NgForOf, TestNumberComponent, TestSelectComponent, TestCheckboxComponent, AddButtonComponent, NgIf, RemoveButtonComponent, SubmitButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -46,11 +47,14 @@ export class AppComponent implements OnInit{
 
   addFormControl(inputName: string, value:string = '') {
     (this.testForm.get(inputName) as FormArray).push(this.fb.control(value));
-    console.log(this.testForm);
   }
 
   deleteFormControl(obj: {inputName: string, index: number}) {
     const control = this.testForm.get(obj.inputName) as FormArray;
     control.removeAt(obj.index);
+  }
+
+  submitForm() {
+    console.log(this.testForm);
   }
 }

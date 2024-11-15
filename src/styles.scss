@@ -4,9 +4,11 @@ body {
   font-family: 'PT Sans', serif;
   font-style: normal;
 }
+$marginIndent: 17px;
+$labelWidth: 140px;
 
 input, select {
-  margin-left: 17px;
+  margin-left: $marginIndent;
   padding: 13px 15px 10px 15px;
   font-size: 17px;
   box-sizing: border-box;
@@ -21,7 +23,7 @@ select {
 }
 
 label, legend {
-  width: 140px;
+  width: $labelWidth;
   font-size: 17px;
   display: inline-block;
   line-height: 22px;
@@ -31,4 +33,9 @@ label, legend {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+}
+
+.submit-button {
+  position: relative;
+  left: $labelWidth + $marginIndent;
 }
