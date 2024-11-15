@@ -1,4 +1,4 @@
-import {IInput} from './IInput';
+import {IOption} from './IOption';
 
 export interface IForm {
   id: string,
@@ -7,7 +7,7 @@ export interface IForm {
   inputName: string,
   required: boolean,
   multiply?: boolean,
-  options?: Array<{id: number, value: string, selected: boolean}>,
+  options?: IOption[],
   min: number | null,
   max: number | null
 }
