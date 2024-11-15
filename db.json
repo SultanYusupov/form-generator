@@ -7,7 +7,7 @@
         {
           "id": 0,
           "value": "Не женат/не замужем",
-          "selected": false
+          "selected": true
         },
         {
           "id": 1,
@@ -24,7 +24,7 @@
       {
         "id": 0,
         "value": "Не важно",
-        "selected": false
+        "selected": true
       },
       {
         "id": 1,
