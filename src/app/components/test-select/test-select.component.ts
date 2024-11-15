@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IForm} from '../../interfaces/IForm';
 import {NgClass} from '@angular/common';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {IOption} from '../../interfaces/IOption';
 
 @Component({
   selector: 'test-select',
@@ -36,14 +37,14 @@ export class TestSelectComponent implements OnInit{
     return (this.fControl.get(this.inputData.inputName) as FormArray);
   }
   get selectedOptions() {
-    return this.inputData.options!.filter(op => op.selected);
+    return this.inputData.options!.filter((op: IOption) => op.selected);
   }
 
   openSelect() {
     this.opened = !this.opened;
   }
 
-  select(option: {id: number, value: string, selected: boolean}) {
+  select(option: IOption) {
     if (this.inputData.multiply) {
       if (option.selected) {
         const controlId = this.getFormArray().controls.findIndex(ctrl => ctrl.value === option.value);
@@ -57,7 +58,7 @@ export class TestSelectComponent implements OnInit{
     }
     else {
       if (this.selectedOptions.length > 0) {
-        this.inputData.options?.map(el => el.selected = false);
+        this.inputData.options?.map((el: IOption) => el.selected = false);
       }
       this.fControl.get(this.inputData.inputName)?.setValue(option.value);
       this.selectedOption = option.value;

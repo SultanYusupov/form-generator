@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IForm} from '../../interfaces/IForm';
 import {FormArray, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {IOption} from '../../interfaces/IOption';
 
 @Component({
   selector: 'test-checkbox',
@@ -35,12 +36,12 @@ export class TestCheckboxComponent implements OnInit{
   checkAll($event:Event) {
     const checkStatus = ($event.target as HTMLInputElement).checked;
     if (checkStatus) {
-      this.inputData.options?.forEach(option => {
+      this.inputData.options?.forEach((option: IOption) => {
         this.add.emit(option.value);
       });
     }
     else {
-      this.inputData.options?.forEach(option => {
+      this.inputData.options?.forEach((option: IOption) => {
         this.remove.emit({inputName: this.inputData.inputName, index: option.id});
       });
 
