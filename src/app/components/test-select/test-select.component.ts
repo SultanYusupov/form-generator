@@ -22,22 +22,22 @@ export class TestSelectComponent implements OnInit{
   selectedOption: string = '';
 
   ngOnInit() {
+    const defaultValue:string = this.defaultOption == -1 ? '' : this.inputData!.options![this.defaultOption].value;
     if (this.inputData.multiply) {
       this.fControl.addControl(this.inputData.inputName, new FormArray([]));
-      this.getFormArray().push(new FormControl(this.inputData!.options![0].value));
+      this.getFormArray().push(new FormControl(defaultValue));
     }
     else {
-      this.fControl.addControl(this.inputData.inputName, new FormControl(this.inputData!.options![0].value));
+      this.fControl.addControl(this.inputData.inputName, new FormControl(defaultValue));
     }
-    this.selectedOption = this.inputData.options![0].value;
-    this.inputData.options![0].selected = true;
+    this.selectedOption = defaultValue;
   }
 
   getFormArray() {
     return (this.fControl.get(this.inputData.inputName) as FormArray);
   }
-  get selectedOptions() {
-    return this.inputData.options!.filter((op: IOption) => op.selected);
+  get defaultOption():number {
+    return this.inputData.options!.findIndex((op: IOption) => op.selected);
   }
 
   openSelect() {
@@ -57,9 +57,7 @@ export class TestSelectComponent implements OnInit{
       }
     }
     else {
-      if (this.selectedOptions.length > 0) {
-        this.inputData.options?.map((el: IOption) => el.selected = false);
-      }
+      if (this.defaultOption != -1) this.inputData.options?.map(o => o.selected = false);
       this.fControl.get(this.inputData.inputName)?.setValue(option.value);
       this.selectedOption = option.value;
     }
