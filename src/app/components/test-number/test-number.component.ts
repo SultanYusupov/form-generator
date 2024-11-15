@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {FormArray, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {IForm} from '../../interfaces/IForm';
 import {NumberButtonComponent} from '../number-button/number-button.component';
 import {AddButtonComponent} from '../add-button/add-button.component';
@@ -20,7 +20,7 @@ import {RemoveButtonComponent} from '../remove-button/remove-button.component';
   templateUrl: './test-number.component.html',
   styleUrl: './test-number.component.css'
 })
-export class TestNumberComponent implements OnInit {
+export class TestNumberComponent {
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
   @Output() add: EventEmitter<void> = new EventEmitter();
@@ -28,17 +28,6 @@ export class TestNumberComponent implements OnInit {
 
   getControls() {
     return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
-  }
-
-  ngOnInit() {
-    if (this.inputData.multiply) {
-      this.fControl.addControl(this.inputData.inputName, new FormArray([], this.inputData.required ? Validators.required : null));
-      const controlArray = this.fControl.get(this.inputData.inputName) as FormArray;
-      controlArray.push(new FormControl(''))
-    }
-    else {
-      this.fControl.addControl(this.inputData.inputName, new FormControl('', this.inputData.required ? Validators.required : null))
-    }
   }
 
   addControlItem() {

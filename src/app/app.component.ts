@@ -1,10 +1,14 @@
-import {ApplicationRef, Component, inject, OnInit} from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  inject,
+  OnInit
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
-  AbstractControl,
   FormArray,
   FormBuilder,
-  FormControl, FormControlName,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators
@@ -32,17 +36,52 @@ export class AppComponent implements OnInit{
   forms: IForm[] = [];
   bs = inject(BackendService);
   fb = inject(FormBuilder);
-  private appRef = inject(ApplicationRef);
+  private cdr = inject(ChangeDetectorRef);
   testForm!: FormGroup; // массив forms может быть пустым, поэтому знак вопроса
   ngOnInit() {
     this.getForms();
     this.testForm = this.fb.group({});
   }
 
+  createForm() {
+    this.forms.forEach((form: IForm) => {
+      if (form.type == 'text' || form.type == 'number') {
+
+        if (form.multiply) {
+          this.testForm.addControl(form.inputName, new FormArray([], form.required ? Validators.required : null));
+          const controlArray = this.testForm.get(form.inputName) as FormArray;
+          controlArray.push(new FormControl(''))
+        }
+        else {
+          this.testForm.addControl(form.inputName, new FormControl('', form.required ? Validators.required : null))
+        }
+      }
+
+      else if (form.type == 'select') {
+        if (form.multiply) {
+          this.testForm.addControl(form.inputName, new FormArray([], form.required ? Validators.required : null));
+          (this.testForm.get(form.inputName) as FormArray).push(new FormControl(''));
+        }
+        else {
+          this.testForm.addControl(form.inputName, new FormControl('', form.required ? Validators.required : null));
+        }
+      }
+
+      else if (form.type == 'checkbox') {
+        this.testForm.addControl(form.inputName, new FormArray([], form.required ? Validators.required : null));
+      }
+    })
+  }
+
   getForms() {
     this.bs.getFormList().subscribe(data => {
       this.forms = data;
+      this.createForm();
     });
+  }
+
+  get validForm() {
+    return this.testForm.valid;
   }
 
   addFormControl(inputName: string, value:string = '') {
@@ -55,6 +94,7 @@ export class AppComponent implements OnInit{
   }
 
   submitForm() {
+    console.log(this.validForm);
     console.log(this.testForm);
   }
 }

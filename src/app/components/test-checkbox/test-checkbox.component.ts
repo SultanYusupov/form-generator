@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IForm} from '../../interfaces/IForm';
-import {FormArray, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {IOption} from '../../interfaces/IOption';
 import {NgIf} from '@angular/common';
 
@@ -15,15 +15,11 @@ import {NgIf} from '@angular/common';
   templateUrl: './test-checkbox.component.html',
   styleUrl: './test-checkbox.component.css'
 })
-export class TestCheckboxComponent implements OnInit{
+export class TestCheckboxComponent {
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
   @Output() add: EventEmitter<string> = new EventEmitter();
   @Output() remove: EventEmitter<{inputName: string, index: number}> = new EventEmitter();
-
-  ngOnInit() {
-    this.fControl.addControl(this.inputData.inputName, new FormArray([], this.inputData.required ? Validators.required : null));
-  }
 
   changeCheckbox($event:Event, index: number) {
     const checkStatus = ($event.target as HTMLInputElement).checked;

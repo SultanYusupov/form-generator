@@ -17,6 +17,6 @@
         }
       }
     }
-    <submit (click)="submitForm()" class="submit-button"></submit>
+    <submit (click)="submitForm()" class="submit-button" [isDisabled]="validForm"></submit>
   </form>
 </div>

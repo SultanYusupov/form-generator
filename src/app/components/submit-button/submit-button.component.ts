@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'submit',
@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './submit-button.component.html',
   styleUrl: './submit-button.component.scss'
 })
-export class SubmitButtonComponent {
-
+export class SubmitButtonComponent{
+  @Input() isDisabled!: boolean;
 }

@@ -24,13 +24,7 @@ export class TestSelectComponent implements OnInit{
 
   ngOnInit() {
     const defaultValue:string = this.defaultOption == -1 ? '' : this.inputData!.options![this.defaultOption].value;
-    if (this.inputData.multiply) {
-      this.fControl.addControl(this.inputData.inputName, new FormArray([], this.inputData.required ? Validators.required : null));
-      this.getFormArray().push(new FormControl(defaultValue));
-    }
-    else {
-      this.fControl.addControl(this.inputData.inputName, new FormControl(defaultValue, this.inputData.required ? Validators.required : null));
-    }
+    this.inputData.multiply ? this.getFormArray().controls[0].setValue(defaultValue) : this.fControl.get(this.inputData.inputName)?.setValue(defaultValue);
     this.selectedOption = defaultValue;
   }
 

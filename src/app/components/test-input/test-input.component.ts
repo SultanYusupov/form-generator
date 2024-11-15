@@ -1,12 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {
-  ControlContainer,
   FormArray,
-  FormBuilder,
-  FormControl,
   FormGroup,
-  FormGroupName,
-  ReactiveFormsModule, Validators
+  ReactiveFormsModule,
 } from '@angular/forms';
 import {IForm} from '../../interfaces/IForm';
 import {AddButtonComponent} from '../add-button/add-button.component';
@@ -25,9 +21,8 @@ import {RemoveButtonComponent} from '../remove-button/remove-button.component';
   ],
   templateUrl: './test-input.component.html',
   styleUrl: './test-input.component.scss',
-  // viewProviders: [{ provide: ControlContainer, useExisting: FormGroupName }]
 })
-export class TestInputComponent implements OnInit {
+export class TestInputComponent {
   @Input() inputData!: IForm;
   @Input() fControl!: FormGroup;
   @Output() add: EventEmitter<void> = new EventEmitter();
@@ -35,17 +30,6 @@ export class TestInputComponent implements OnInit {
 
   getControls() {
     return (this.fControl.get(this.inputData.inputName) as FormArray).controls;
-  }
-
-  ngOnInit() {
-    if (this.inputData.multiply) {
-      this.fControl.addControl(this.inputData.inputName, new FormArray([], this.inputData.required ? Validators.required : null));
-      const controlArray = this.fControl.get(this.inputData.inputName) as FormArray;
-      controlArray.push(new FormControl(''));
-    }
-    else {
-      this.fControl.addControl(this.inputData.inputName, new FormControl('', this.inputData.required ? Validators.required : null))
-    }
   }
 
   addControlItem() {
