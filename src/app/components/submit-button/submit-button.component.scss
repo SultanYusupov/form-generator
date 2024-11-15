@@ -14,3 +14,8 @@ button {
 button:hover {
   opacity: 70%;
 }
+
+button:disabled {
+  opacity: 40%;
+  cursor: default;
+}
