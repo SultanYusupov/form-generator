@@ -1,25 +1,27 @@
 <div class="form-block">
   <p class="title">Анкета</p>
-  <form [formGroup]="testForm">
-    @for (form of forms; track form.id) {
-      @switch (form.type) {
-        @case ('text') {
+  @if (forms.length) {
+    <form [formGroup]="testForm">
+      @for (form of forms; track form.id) {
+        @switch (form.type) {
+          @case ('text') {
             <test-input [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName)" (remove)="deleteFormControl($event)"></test-input>
-        }
-        @case ('number') {
+          }
+          @case ('number') {
             <test-number [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName)" (remove)="deleteFormControl($event)"></test-number>
+          }
+          @case ('select') {
+            <test-select [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName, $event)" (remove)="deleteFormControl($event)"></test-select>
+          }
+          @case ('checkbox') {
+            <test-checkbox [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName, $event)" (remove)="deleteFormControl($event)"></test-checkbox>
+          }
         }
-        @case ('select') {
-          <test-select [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName, $event)" (remove)="deleteFormControl($event)"></test-select>
-        }
-        @case ('checkbox') {
-          <test-checkbox [inputData]="form" [fControl]="testForm" (add)="addFormControl(form.inputName, $event)" (remove)="deleteFormControl($event)"></test-checkbox>
+        @if (form.hint) {
+          <p class="hint">{{form.hint}}</p>
         }
       }
-      @if (form.hint) {
-        <p class="hint">{{form.hint}}</p>
-      }
-    }
-    <submit class="submit-button" [isDisabled]="validForm" (click)="onSubmit(testForm)"></submit>
-  </form>
+      <submit class="submit-button" [isDisabled]="validForm" (click)="onSubmit(testForm)"></submit>
+    </form>
+  }
 </div>
