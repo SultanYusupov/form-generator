@@ -5,7 +5,7 @@
       <!-- От @for отказался, потому что с ним всегда удалялся последний элемент масива-->
       <ng-container *ngFor="let control of getControls(); let i = index">
         <div class="container-with-buttons">
-          <input type="number" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required"  [min]="inputData.min" [max]="inputData.max">
+          <input type="number" [name]="inputData.inputName" [formControlName]="i" [required]="inputData.required">
           <number-button (increment)="incrementNumber(i)" (decrement)="decrementNumber(i)"></number-button>
           <remove-button *ngIf="inputData.multiply && i !== 0" (click)="removeControlItem(i)"></remove-button>
           <add-button *ngIf="inputData.multiply && i == getControls().length - 1" (click)="addControlItem()"></add-button>
@@ -14,7 +14,7 @@
     </ng-container>
   } @else {
     <div class="container-with-buttons">
-          <input type="number" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required" [min]="inputData.min" [max]="inputData.max">
+          <input type="number" [name]="inputData.inputName" [formControlName]="inputData.inputName" [required]="inputData.required">
           <number-button (increment)="incrementNumber()" (decrement)="decrementNumber()"></number-button>
     </div>
   }

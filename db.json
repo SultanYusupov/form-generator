@@ -42,11 +42,6 @@
       "type": "text",
       "required": false,
       "multiply": true,
-      "options": [
-        "ВолГУ",
-        "ВИУ",
-        "ВГСПУ"
-      ],
       "hint": "Укажите заведения, в которых вы учились.",
       "placeholder": "Например, ВолгГУ"
     },

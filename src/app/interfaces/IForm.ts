@@ -9,7 +9,5 @@ export interface IForm {
   multiply?: boolean,
   options?: IOption[],
   hint: string,
-  placeholder: string,
-  min: number | null,
-  max: number | null
+  placeholder: string
 }
