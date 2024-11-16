@@ -1,6 +1,17 @@
-# FormGenerator
+# Генератор фром
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Генерирует форму из json-файла, который приходит с сервера
+
+# Как создать json-файл для генерации
+
+Необходимо установить `json-server` (команда на установку ниже)
+Запустить сервер командой `npx json-server db.json`
+
+# Зависимости
+`npm install json-server`
+`npm install sass --save-dev`
+
+Версия Angular 18.2.11
 
 ## Development server
 
